@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Big 3 Astrology — Home</title>
+  <meta name="description" content="Your Big 3 — Sun, Moon and Rising — free, then a full natal reading with a real astrologer. Psychological astrology in EN, DE and ES." />
+
+  <!-- Open Graph / social share (image only; logo + headline composited at the design layer, never baked in) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Big 3 Astrology" />
+  <meta property="og:title" content="Your Sun, Moon and Rising — read by a human" />
+  <meta property="og:description" content="Get your free Big 3, then a full natal reading with a real astrologer. EN · DE · ES." />
+  <meta property="og:image" content="../assets/brand/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Sun, Moon and Rising — read by a human" />
+  <meta name="twitter:image" content="../assets/brand/og-image.jpg" />
+
+  <!-- SEO: canonical, robots, locale alternates, sitemap -->
+  <link rel="canonical" href="https://big3astrology.com/" />
+  <meta name="robots" content="index, follow" />
+  <link rel="alternate" hreflang="en" href="https://big3astrology.com/" />
+  <link rel="alternate" hreflang="de" href="https://big3astrology.com/de/" />
+  <link rel="alternate" hreflang="es" href="https://big3astrology.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://big3astrology.com/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- SEO: structured data — Organization + LocalBusiness with contact & social -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Big 3 Astrology",
+    "legalName": "Big Astrology GmbH",
+    "url": "https://big3astrology.com/",
+    "image": "https://big3astrology.com/assets/brand/og-image.jpg",
+    "description": "Human astrology in English, German and Spanish — your free Big 3, then a full natal reading with a real astrologer.",
+    "email": "info@big3astrology.com",
+    "priceRange": "CHF 20–250",
+    "founder": { "@type": "Person", "name": "Gabriela Brecht", "jobTitle": "Psychological Astrologer" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ränkestrasse 21",
+      "postalCode": "8700",
+      "addressLocality": "Küsnacht",
+      "addressRegion": "ZH",
+      "addressCountry": "CH"
+    },
+    "areaServed": ["CH", "DE", "AT", "ES"],
+    "availableLanguage": ["en", "de", "es"],
+    "sameAs": ["https://instagram.com/big3astrology"]
+  }
+  </script>
+
+  <!-- Brand design system (fonts + tokens + base) -->
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Website styles -->
+  <link rel="stylesheet" href="site.css" />
+  <!-- Content pages + decorative bands -->
+  <link rel="stylesheet" href="pages.css" />
+
+  <style>
+    html, body { margin: 0; background: #FEF9F5; }
+    #root:empty::after {
+      content: ""; position: fixed; inset: 0;
+      background: #FEF9F5 url("../assets/logos/b3a-icon-color.png") center/64px no-repeat;
+      opacity: 0.5;
+    }
+    .twk-panel { font-family: var(--font-body); }
+  </style>
+
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#FEF9F5"></rect>
+      <g transform="translate(600 360)" fill="none" stroke-width="9" stroke-linecap="round">
+        <polygon points="-140,-60 140,-80 0,150" stroke="#1B1B1B"></polygon>
+        <circle cx="-140" cy="-60" r="30" fill="#A4426C" stroke="none"></circle>
+        <circle cx="140" cy="-80" r="26" fill="#F27678" stroke="none"></circle>
+        <path d="M-40,150 a40,34 0 0 1 80,0" stroke="#E6A44E"></path>
+        <line x1="-50" y1="150" x2="50" y2="150" stroke="#E6A44E"></line>
+      </g>
+      <text x="600" y="600" text-anchor="middle" font-family="Georgia, serif" font-size="78" fill="#1B1B1B" letter-spacing="8">BIG 3</text>
+    </svg>
+  </template>
+</head>
+<body style="font-size: 8px">
+  <div id="root"></div>
+  <noscript>
+    <div style="max-width:640px;margin:80px auto;padding:0 24px;font-family:Georgia,serif;color:#1B1B1B;text-align:center;">
+      <h1>Big 3 Astrology</h1>
+      <p>Your Sun, Moon and Rising — read by a person, not an algorithm. Please enable JavaScript to use the Big 3 calculator.</p>
+    </div>
+  </noscript>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <!-- copy data (plain JS) -->
+  <script src="i18n.js"></script>
+  <!-- tweaks shell, then UI chrome, then bands + pages, then app -->
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="ui.jsx"></script>
+  <script type="text/babel" src="bands.jsx"></script>
+  <script type="text/babel" src="decor.jsx"></script>
+  <script type="text/babel" src="pages.jsx"></script>
+  <script type="text/babel" src="legal.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

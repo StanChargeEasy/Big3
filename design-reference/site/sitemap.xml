@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://big3astrology.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://big3astrology.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://big3astrology.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://big3astrology.com/es/"/>
+  </url>
+  <url><loc>https://big3astrology.com/full-reading/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://big3astrology.com/15-min-call/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://big3astrology.com/relationship-reading/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://big3astrology.com/about/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://big3astrology.com/journal/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://big3astrology.com/journal/free-birth-chart/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://big3astrology.com/journal/rising-sign/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://big3astrology.com/journal/moon-sign/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://big3astrology.com/legal-notice/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://big3astrology.com/terms/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://big3astrology.com/privacy/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://big3astrology.com/cancellations-refunds/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>

@@ -1,0 +1,204 @@
+/* ============================================================
+   Big3 Astrology — Content pages (About · Offers · Journal · Pillars)
+   Decorative brand bands + long-form prose. Mobile-first.
+   Relies on tokens from ../styles.css and site.css.
+   ============================================================ */
+
+/* ============================================================ DECORATIVE BANDS */
+.b3-band { position: relative; width: 100%; overflow: hidden; background: var(--b3a-cream);
+  min-height: var(--bh-m); display: flex; }
+.b3-band > picture { position: absolute; inset: 0; }
+.b3-band > picture img { width: 100%; height: 100%; object-fit: cover;
+  object-position: var(--bp-m, center); display: block; }
+@media (min-width: 760px) {
+  .b3-band { min-height: var(--bh-d); }
+  .b3-band > picture img { object-position: var(--bp, center); }
+}
+
+/* header variant — flexible title overlay */
+.b3-band--header { align-items: center; }
+.b3-band--header::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.b3-band--left.b3-band--dark::after  { background: linear-gradient(90deg, rgba(254,249,245,0.60), rgba(254,249,245,0) 58%); }
+.b3-band--center.b3-band--dark::after { background: radial-gradient(130% 96% at 50% 50%, rgba(254,249,245,0.52), transparent 66%); }
+.b3-band--left.b3-band--light::after  { background: linear-gradient(90deg, rgba(46,18,26,0.52), rgba(46,18,26,0) 60%); }
+
+.b3-band-overlay { position: relative; z-index: 1; width: 100%; }
+.b3-band-inner { display: flex; flex-direction: column; gap: 9px;
+  padding-top: 24px; padding-bottom: 24px; }
+.b3-band--center .b3-band-inner { align-items: center; text-align: center; }
+.b3-band--left .b3-band-inner { align-items: flex-start; text-align: left; }
+
+.b3-band-eyebrow { font-family: var(--font-sans); font-weight: 600; font-size: 12px;
+  letter-spacing: 0.2em; text-transform: uppercase; }
+.b3-band-title { font-family: var(--font-serif); font-weight: 500; line-height: 1.1;
+  letter-spacing: -0.01em; font-size: clamp(28px, 7vw, 32px); max-width: 17ch; text-wrap: pretty; }
+@media (min-width: 760px) { .b3-band-title { font-size: clamp(34px, 4vw, 46px); max-width: 20ch; } }
+
+.b3-band--dark .b3-band-title { color: var(--b3a-ink); }
+.b3-band--dark .b3-band-eyebrow { color: var(--b3a-coral-600); }
+.b3-band--light .b3-band-title { color: #FFF7EF; text-shadow: 0 1px 20px rgba(58,20,30,0.40); }
+.b3-band--light .b3-band-eyebrow { color: var(--b3a-gold); text-shadow: 0 1px 12px rgba(58,20,30,0.35); }
+
+/* ============================================================ PAGE SCAFFOLD */
+.b3-page { padding-bottom: 30px; }
+.b3-page-intro { padding-top: 26px; }
+.b3-measure { max-width: 680px; }
+
+/* shared long-form prose */
+.b3-prose { font-family: var(--font-body); color: var(--text-secondary); font-size: 16.5px; line-height: 1.7; }
+.b3-prose > * + * { margin-top: 17px; }
+.b3-prose p { text-wrap: pretty; }
+.b3-prose strong, .b3-prose b { color: var(--b3a-ink); font-weight: 700; }
+.b3-prose em { font-style: italic; }
+.b3-prose a { color: var(--b3a-wine); text-decoration: underline; text-decoration-color: rgba(164,66,108,0.35);
+  text-underline-offset: 3px; font-weight: 600; transition: text-decoration-color var(--dur-base); }
+.b3-prose a:hover { text-decoration-color: var(--b3a-wine); }
+.b3-prose h2 { font-family: var(--font-serif); font-weight: 500; color: var(--b3a-ink);
+  font-size: clamp(23px, 5.4vw, 29px); line-height: 1.2; letter-spacing: -0.01em;
+  margin-top: 38px; padding-top: 4px; }
+.b3-prose h3 { font-family: var(--font-sans); font-weight: 600; color: var(--b3a-ink);
+  font-size: 17px; letter-spacing: 0.01em; margin-top: 26px; }
+.b3-prose ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+.b3-prose ul li { position: relative; padding-left: 26px; }
+.b3-prose ul li::before { content: "✶"; position: absolute; left: 0; top: 1px;
+  color: var(--b3a-gold-deep); font-size: 13px; }
+.b3-prose ul li strong:first-child { display: inline; }
+.b3-prose blockquote { margin: 26px 0 0; padding: 18px 22px; background: var(--b3a-sand);
+  border-left: 3px solid var(--b3a-gold); border-radius: var(--radius-sm);
+  font-family: var(--font-serif); font-style: italic; font-size: 18px; line-height: 1.5; color: var(--b3a-ink); }
+.b3-prose blockquote .by { display: block; margin-top: 10px; font-family: var(--font-sans); font-style: normal;
+  font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-secondary); }
+.b3-disclaimer { margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--border-subtle);
+  font-size: 13px; line-height: 1.6; color: var(--text-muted); font-style: italic; max-width: 680px; }
+
+/* answer-first short-answer lead (pillars) */
+.b3-shortanswer { margin-top: 22px; background: var(--b3a-white); border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--b3a-coral); border-radius: var(--radius-md); box-shadow: var(--shadow-xs);
+  padding: 18px 20px; font-family: var(--font-body); font-size: 17px; line-height: 1.62; color: var(--text-secondary); max-width: 680px; }
+.b3-shortanswer .lbl { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-sans);
+  font-weight: 700; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--b3a-coral-600); margin-right: 8px; }
+.b3-shortanswer strong { color: var(--b3a-ink); }
+
+/* inline CTA callout inside prose */
+.b3-inline-cta { margin-top: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px;
+  background: var(--b3a-sand); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 22px 22px; max-width: 680px; }
+.b3-inline-cta .txt { flex: 1 1 240px; }
+.b3-inline-cta .txt h4 { font-family: var(--font-serif); font-weight: 500; font-size: 21px; color: var(--b3a-ink); line-height: 1.2; }
+.b3-inline-cta .txt p { font-size: 14px; line-height: 1.55; color: var(--text-secondary); margin-top: 5px; }
+.b3-inline-cta .b3-btn { flex: none; }
+
+/* FAQ accordion */
+.b3-faq { margin-top: 14px; max-width: 680px; display: flex; flex-direction: column; }
+.b3-faq details { border-bottom: 1px solid var(--border-subtle); }
+.b3-faq details:first-child { border-top: 1px solid var(--border-subtle); }
+.b3-faq summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px; padding: 17px 2px; font-family: var(--font-sans); font-weight: 600; font-size: 16px; color: var(--b3a-ink); }
+.b3-faq summary::-webkit-details-marker { display: none; }
+.b3-faq summary .icn { flex: none; width: 22px; height: 22px; position: relative; margin-top: 1px; }
+.b3-faq summary .icn::before, .b3-faq summary .icn::after { content: ""; position: absolute; background: var(--b3a-wine);
+  transition: transform var(--dur-base) var(--ease-out); }
+.b3-faq summary .icn::before { top: 10px; left: 4px; right: 4px; height: 1.6px; }
+.b3-faq summary .icn::after { left: 10px; top: 4px; bottom: 4px; width: 1.6px; }
+.b3-faq details[open] summary .icn::after { transform: scaleY(0); }
+.b3-faq details[open] summary { color: var(--b3a-wine); }
+.b3-faq .ans { padding: 0 2px 18px; font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); max-width: 60ch; }
+.b3-faq summary:focus-visible { outline: 2px solid var(--b3a-gold); outline-offset: 2px; border-radius: 3px; }
+
+/* ============================================================ ABOUT */
+.b3-about-grid { display: flex; flex-direction: column; gap: 26px; padding-top: 26px; }
+.b3-about-bio { order: 1; }
+.b3-about-aside { order: 2; max-width: 360px; }
+.b3-portrait { position: relative; width: 100%; border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); aspect-ratio: 4 / 5; background: var(--b3a-ivory); }
+.b3-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; }
+/* placeholder treatment (real portrait pending — see handoff note) */
+.b3-portrait--ph { display: grid; place-items: center; text-align: center;
+  background:
+    repeating-linear-gradient(135deg, rgba(164,66,108,0.05) 0 11px, rgba(164,66,108,0) 11px 22px),
+    linear-gradient(180deg, var(--b3a-blush), var(--b3a-ivory)); }
+.b3-portrait--ph .ph-in { padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.b3-portrait--ph .ph-mark { width: 46px; height: 46px; border-radius: 50%; border: 1px dashed var(--b3a-line-strong);
+  display: grid; place-items: center; color: var(--b3a-wine); }
+.b3-portrait--ph .ph-kicker { font-family: var(--font-mono, ui-monospace, monospace); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--b3a-wine); }
+.b3-portrait--ph .ph-note { font-family: var(--font-mono, ui-monospace, monospace); font-size: 11px; line-height: 1.5; color: var(--text-muted); max-width: 26ch; }
+.b3-portrait-cap { margin-top: 11px; font-size: 13px; line-height: 1.5; color: var(--text-muted); font-style: italic; }
+.b3-about-credits { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.b3-chip { font-family: var(--font-sans); font-size: 12px; letter-spacing: 0.04em; color: var(--b3a-wine-700);
+  background: var(--b3a-plum-wash); border-radius: var(--radius-pill); padding: 7px 13px; }
+
+@media (min-width: 860px) {
+  .b3-about-grid { display: grid; grid-template-columns: 1fr 360px; gap: 54px; align-items: start; }
+  .b3-about-bio { order: 1; }
+  .b3-about-aside { order: 2; position: sticky; top: 92px; }
+}
+
+/* ============================================================ OFFER / READING PAGE */
+/* 15-min call: copy + celestial illustration */
+.b3-call-intro { display: flex; flex-direction: column; gap: 8px; }
+.b3-call-aside { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 6px 0 4px; }
+.b3-call-art { width: 200px; height: 200px; max-width: 60vw; display: block; }
+.b3-call-art-cap { font-family: var(--font-mono, ui-monospace, monospace); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--b3a-coral-600); }
+@media (min-width: 760px) {
+  .b3-call-intro { flex-direction: row; align-items: center; justify-content: space-between; gap: 40px; }
+  .b3-call-intro .b3-offer-intro { flex: 1 1 auto; padding-top: 40px; }
+  .b3-call-aside { flex: 0 0 auto; align-self: center; padding-top: 32px; }
+  .b3-call-art { width: 248px; height: 248px; }
+}
+
+.b3-offer-intro { padding-top: 26px; }
+.b3-offer-lede { font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--text-secondary);
+  max-width: 620px; margin-top: 6px; }
+.b3-offer-lede b { color: var(--b3a-ink); }
+.b3-price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; margin-top: 18px; }
+.b3-price { font-family: var(--font-serif); font-size: 30px; font-weight: 500; color: var(--b3a-wine); }
+.b3-price .cur { font-size: 0.62em; letter-spacing: 0.04em; color: var(--b3a-gold-deep); margin-right: 4px; }
+.b3-offer-cta { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; }
+.b3-offer-cta .b3-btn { min-width: 240px; }
+.b3-included { margin-top: 36px; background: var(--b3a-white); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-xs); padding: 24px 24px; max-width: 680px; }
+.b3-included h2 { margin-top: 0; }
+.b3-included .b3-prose { margin-top: 14px; }
+
+/* ============================================================ JOURNAL INDEX */
+.b3-journal-head { padding-top: 30px; text-align: center; }
+.b3-journal-head .b3-eyebrow { display: inline-block; }
+.b3-journal-head h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(30px, 7vw, 44px);
+  color: var(--b3a-ink); line-height: 1.1; margin-top: 12px; }
+.b3-journal-head p { margin: 14px auto 0; max-width: 48ch; color: var(--text-secondary); font-size: 16.5px; line-height: 1.6; }
+.b3-journal-grid { margin-top: 34px; display: grid; gap: 20px; }
+@media (min-width: 760px) { .b3-journal-grid { grid-template-columns: repeat(3, 1fr); } }
+.b3-jcard { display: flex; flex-direction: column; text-align: left; background: var(--b3a-white);
+  border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xs);
+  cursor: pointer; padding: 0; transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base); }
+.b3-jcard:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+.b3-jcard:focus-visible { outline: 3px solid var(--b3a-gold); outline-offset: 2px; }
+.b3-jcard .b3-band { min-height: 132px; }
+.b3-jcard-body { padding: 18px 18px 20px; }
+.b3-jcard-kicker { font-family: var(--font-sans); font-weight: 600; font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--b3a-coral-600); }
+.b3-jcard h3 { font-family: var(--font-serif); font-weight: 500; font-size: 21px; line-height: 1.18; color: var(--b3a-ink); margin-top: 8px; text-wrap: pretty; }
+.b3-jcard p { font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); margin-top: 9px; }
+.b3-jcard .more { margin-top: 14px; font-family: var(--font-sans); font-weight: 600; font-size: 12px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--b3a-wine); display: inline-flex; align-items: center; gap: 6px; }
+
+/* back link on content pages */
+.b3-page-back { display: inline-flex; align-items: center; gap: 7px; background: none; border: none; cursor: pointer;
+  font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-secondary); padding: 16px 0 0; }
+.b3-page-back:hover { color: var(--b3a-wine); }
+
+/* ============================================================ LEGAL */
+.b3-legal { padding-top: 8px; }
+.b3-legal-head { padding-top: 34px; padding-bottom: 8px; }
+.b3-legal-head h1 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(30px, 7vw, 44px);
+  line-height: 1.1; color: var(--b3a-ink); margin-top: 12px; }
+.b3-legal .b3-prose { margin-top: 22px; }
+.b3-legal .b3-prose h2 { font-size: clamp(19px, 4.6vw, 22px); margin-top: 30px; }
+.b3-page-back-wrap { margin-top: 30px; }
+
+@media (min-width: 760px) {
+  .b3-page { padding-bottom: 56px; }
+  .b3-prose { font-size: 17px; }
+}

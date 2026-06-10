@@ -1,0 +1,55 @@
+/* ============================================================
+   Big3 Astrology — Base element defaults
+   Lightweight, token-driven. Sets the warm editorial baseline
+   so any page/card that links styles.css inherits the brand feel.
+   ============================================================ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: var(--fw-semibold); }
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+img, svg { display: block; max-width: 100%; }
+
+/* ---- Reusable brand text patterns ---- */
+.b3a-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--brand-accent);
+}
+
+.b3a-wordmark {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+}
+
+.b3a-serif {
+  font-family: var(--font-serif);
+}
+
+/* Selection */
+::selection {
+  background: var(--b3a-coral-soft);
+  color: var(--b3a-ink);
+}

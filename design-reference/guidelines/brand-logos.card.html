@@ -1,0 +1,31 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Logo Lockups" subtitle="Full color, reversed & monochrome" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 18px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .tile { border-radius: var(--radius-md); border: 1px solid var(--border-subtle); height: 150px; display: flex; align-items: center; justify-content: center; padding: 18px; }
+  .tile img { max-height: 110px; max-width: 92%; object-fit: contain; }
+  .cap { font-family: var(--font-sans); font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); text-align: center; margin-top: 7px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <div class="tile" style="background:var(--b3a-cream)"><img src="../assets/logos/b3a-full-color-black.png" alt="Big3 full color"></div>
+      <div class="cap">Full color · cream</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--b3a-charcoal)"><img src="../assets/logos/b3a-full-color-white.png" alt="Big3 reversed"></div>
+      <div class="cap">Reversed · dark</div>
+    </div>
+    <div>
+      <div class="tile" style="background:var(--b3a-cream)"><img src="../assets/logos/b3a-icon-color.png" alt="Big3 icon" style="max-height:120px"></div>
+      <div class="cap">Triangle icon</div>
+    </div>
+  </div>
+</body>
+</html>

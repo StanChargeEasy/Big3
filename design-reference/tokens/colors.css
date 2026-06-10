@@ -1,0 +1,67 @@
+/* ============================================================
+   Big3 Astrology — Color Tokens
+   Sampled directly from the logo + Instagram post system.
+   The brand triad mirrors the "Big 3" of a natal chart:
+     Sun (coral) · Moon (wine) · Ascendant (gold)
+   ============================================================ */
+:root {
+  /* ---- Brand triad (raw) ---- */
+  --b3a-wine:        #A4426C; /* Moon — primary deep brand color */
+  --b3a-wine-deep:   #7C2F50; /* pressed / dense wine block      */
+  --b3a-wine-700:    #8E3760;
+  --b3a-coral:       #F27678; /* Sun — energetic accent          */
+  --b3a-coral-600:   #E85F61;
+  --b3a-coral-soft:  #F8A6A6;
+  --b3a-gold:        #E6A44E; /* Ascendant — secondary / stars   */
+  --b3a-gold-deep:   #C9852F;
+  --b3a-amber:       #E5A34D; /* full-bleed content block         */
+
+  /* ---- Ink & neutrals (warm) ---- */
+  --b3a-ink:         #1B1B1B; /* near-black, wordmark + headings  */
+  --b3a-ink-800:     #2A2A2A;
+  --b3a-charcoal:    #3D4047; /* slate dark card                  */
+  --b3a-ink-500:     #6E665F; /* muted warm grey text             */
+  --b3a-ink-400:     #948B82; /* captions, placeholders           */
+  --b3a-line:        #ECE0D5; /* warm hairline border             */
+  --b3a-line-strong: #DBCBBC;
+
+  /* ---- Surfaces ---- */
+  --b3a-cream:       #FEF9F5; /* page blush-white                 */
+  --b3a-ivory:       #FBF3EC; /* slightly deeper paper            */
+  --b3a-sand:        #F3E7DC; /* warm tan card / left column      */
+  --b3a-blush:       #F9E6E2; /* soft coral wash                  */
+  --b3a-plum-wash:   #EFD9E1; /* soft wine wash                   */
+  --b3a-white:       #FFFFFF;
+
+  /* ---- Semantic aliases ---- */
+  --surface-page:      var(--b3a-cream);
+  --surface-paper:     var(--b3a-ivory);
+  --surface-card:      var(--b3a-white);
+  --surface-sand:      var(--b3a-sand);
+  --surface-blush:     var(--b3a-blush);
+  --surface-inverse:   var(--b3a-charcoal);
+  --surface-wine:      var(--b3a-wine);
+  --surface-amber:     var(--b3a-amber);
+
+  --text-primary:      var(--b3a-ink);
+  --text-secondary:    var(--b3a-ink-500);
+  --text-muted:        var(--b3a-ink-400);
+  --text-on-color:     var(--b3a-cream);
+  --text-on-wine:      #FBEAF0;
+
+  --brand-primary:     var(--b3a-wine);
+  --brand-accent:      var(--b3a-coral);
+  --brand-gold:        var(--b3a-gold);
+
+  --border-subtle:     var(--b3a-line);
+  --border-strong:     var(--b3a-line-strong);
+  --border-ink:        var(--b3a-ink);
+
+  --star:              var(--b3a-gold);
+  --focus-ring:        var(--b3a-wine);
+
+  /* ---- Celestial body colors (for glyphs) ---- */
+  --sun-color:   var(--b3a-coral);
+  --moon-color:  var(--b3a-wine);
+  --asc-color:   var(--b3a-gold);
+}

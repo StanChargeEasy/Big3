@@ -1,0 +1,26 @@
+<!-- @dsCard group="Brand" viewport="700x190" name="Trinity Glyphs" subtitle="The three luminaries of the Big 3" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--surface-page); padding: 24px; }
+  .row { display: flex; gap: 16px; align-items: stretch; }
+  .g { flex: 1; background: var(--surface-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px 14px; text-align: center; box-shadow: var(--shadow-xs); }
+  .g img { height: 52px; object-fit: contain; margin: 0 auto; }
+  .nm { font-family: var(--font-sans); font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-top: 12px; }
+  .role { font-family: var(--font-body); font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+  .moon .nm { color: var(--moon-color); }
+  .sun .nm { color: var(--sun-color); }
+  .asc .nm { color: var(--asc-color); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="g sun"><img src="../assets/icons/glyph-sun.png" alt="sun"><div class="nm">Sun</div><div class="role">Identity · the self</div></div>
+    <div class="g moon"><img src="../assets/icons/glyph-moon.png" alt="moon"><div class="nm">Moon</div><div class="role">Emotion · inner world</div></div>
+    <div class="g asc"><img src="../assets/icons/glyph-libra.png" alt="ascendant" style="height:60px"><div class="nm">Ascendant</div><div class="role">Rising · first impression</div></div>
+  </div>
+</body>
+</html>

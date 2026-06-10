@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>body{margin:0;background:var(--surface-page);padding:26px}.sec{font:600 10px var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px}.group{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}</style>
+</head><body>
+<div id="root">loading…</div>
+<script>
+const FILES = window.__FILES__ || [];
+</script>
+<script type="text/babel" data-presets="env,react" data-plugins="">
+(async () => {
+  const names = ['components/celestial/TrinityMark.jsx','components/celestial/CelestialDivider.jsx','components/celestial/StarRating.jsx','components/celestial/ZodiacGlyph.jsx','components/core/Button.jsx','components/core/Badge.jsx','components/core/Eyebrow.jsx','components/core/Card.jsx'];
+  const reg = {};
+  for (const path of names) {
+    let src;
+    try { src = await (await fetch('../'+path)).text(); } catch(e){ continue; }
+    src = src.replace(/import[^\n]*\n/g,'').replace(/export\s+function/g,'function');
+    const exported = [...src.matchAll(/function\s+([A-Z][A-Za-z0-9]*)/g)].map(m=>m[1]);
+    const wrapped = '(function(React){\n' + src + '\nreturn {' + exported.join(',') + '};\n})';
+    const code = Babel.transform(wrapped, {presets:['react']}).code;
+    const factory = eval(code);
+    Object.assign(reg, factory(React));
+  }
+  window.B3 = reg;
+  const { Button, Badge, Eyebrow, Card, TrinityMark, CelestialDivider, StarRating, ZodiacGlyph } = reg;
+  function Demo(){
+    return (<div>
+      <p className="sec">Celestial</p>
+      <div className="group">
+        {TrinityMark && <TrinityMark size={64} base="../assets"/>}
+        {CelestialDivider && <CelestialDivider base="../assets" style={{width:220}}/>}
+        {StarRating && <StarRating value={5}/>}
+        {ZodiacGlyph && ['aries','cancer','libra','scorpio','pisces'].map(s=><ZodiacGlyph key={s} sign={s} color="wine" size={26}/>)}
+      </div>
+      <p className="sec">Buttons</p>
+      <div className="group">
+        <Button variant="primary">Book a consultation</Button>
+        <Button variant="accent">Send</Button>
+        <Button variant="gold">Chart</Button>
+        <Button variant="outline" uppercase>Read more</Button>
+        <Button variant="ghost">Skip</Button>
+      </div>
+      <p className="sec">Badges + Eyebrow</p>
+      <div className="group">
+        <Badge variant="wine">Aries Season</Badge>
+        <Badge variant="softCoral">New Moon</Badge>
+        <Badge variant="outline">Ritual</Badge>
+        <Eyebrow color="wine" rules>Mantras for Aries Season</Eyebrow>
+      </div>
+      <p className="sec">Cards</p>
+      <div className="group" style={{alignItems:'stretch'}}>
+        <Card surface="paper" padding={16} style={{width:170}}><Eyebrow color="coral">Daily</Eyebrow><div style={{fontFamily:'var(--font-serif)',fontSize:19,marginTop:6}}>Paper</div></Card>
+        <Card surface="wine" padding={16} style={{width:170}}><div style={{fontFamily:'var(--font-serif)',fontSize:19}}>Wine</div></Card>
+        <Card surface="sand" padding={16} style={{width:170}}><div style={{fontFamily:'var(--font-serif)',fontSize:19}}>Sand</div></Card>
+      </div>
+    </div>);
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+})();
+</script>
+</body></html>

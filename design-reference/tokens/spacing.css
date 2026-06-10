@@ -1,0 +1,56 @@
+/* ============================================================
+   Big3 Astrology — Spacing, Radii, Shadows, Motion
+   The visual system is airy and editorial: lots of warm negative
+   space, mostly square/lightly-rounded cards, soft wine-tinted
+   shadows, gentle fades (no bounce).
+   ============================================================ */
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* ---- Radii (corners are restrained) ---- */
+  --radius-xs:   3px;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   22px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* ---- Borders ---- */
+  --border-hair:  1px solid var(--border-subtle);
+  --border-ink-1: 1.5px solid var(--b3a-ink);
+  --border-gold:  1px solid var(--b3a-gold);
+
+  /* ---- Shadows (warm, wine-tinted, soft) ---- */
+  --shadow-xs:   0 1px 2px rgba(124, 47, 80, 0.06);
+  --shadow-sm:   0 2px 8px -2px rgba(124, 47, 80, 0.10);
+  --shadow-card: 0 14px 38px -18px rgba(124, 47, 80, 0.22);
+  --shadow-lg:   0 28px 60px -24px rgba(58, 30, 44, 0.28);
+  --shadow-float: 0 20px 48px -16px rgba(124, 47, 80, 0.26);
+  --shadow-inset-line: inset 0 0 0 1px var(--border-subtle);
+
+  /* ---- Motion (gentle fades, no bounce) ---- */
+  --ease-out:   cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-soft:  cubic-bezier(0.4, 0.0, 0.2, 1); /* @kind other */
+  --dur-fast:   140ms; /* @kind other */
+  --dur-base:   240ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+
+  /* ---- Layout ---- */
+  --content-max: 1180px; /* @kind other */
+  --gutter:      24px; /* @kind spacing */
+}

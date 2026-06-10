@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Big 3 Astrology — Consulting</title>
+
+<!-- Code-referenced assets (lifted to window.__resources for offline bundling) -->
+<meta name="ext-resource-dependency" content="../../assets/logos/b3a-full-color-black.png" data-resource-id="logoBlack" />
+<meta name="ext-resource-dependency" content="../../assets/logos/b3a-icon-color.png" data-resource-id="logoIcon" />
+<meta name="ext-resource-dependency" content="../../assets/icons/glyph-sun.png" data-resource-id="glyphSun" />
+<meta name="ext-resource-dependency" content="../../assets/icons/glyph-moon.png" data-resource-id="glyphMoon" />
+<meta name="ext-resource-dependency" content="../../assets/icons/glyph-libra.png" data-resource-id="glyphLibra" />
+<meta name="ext-resource-dependency" content="../../assets/brand/big3-logo-animation.mp4" data-resource-id="heroVideo" />
+<meta name="ext-resource-dependency" content="../../assets/brand/watercolor-hero.jpg" data-resource-id="heroPoster" />
+
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>html,body{margin:0;background:var(--surface-page)}</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#FEF9F5">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FEF9F5"/>
+    <g transform="translate(600 380)" fill="none" stroke-width="10" stroke-linecap="round">
+      <polygon points="-150,-70 150,-90 0,150" stroke="#1B1B1B"/>
+      <circle cx="-150" cy="-70" r="34" fill="#A4426C" stroke="none"/>
+      <g stroke="#F27678">
+        <line x1="150" y1="-90" x2="150" y2="-150"/><line x1="150" y1="-90" x2="150" y2="-30"/>
+        <line x1="150" y1="-90" x2="90" y2="-90"/><line x1="150" y1="-90" x2="210" y2="-90"/>
+        <line x1="150" y1="-90" x2="108" y2="-132"/><line x1="150" y1="-90" x2="192" y2="-48"/>
+        <line x1="150" y1="-90" x2="192" y2="-132"/><line x1="150" y1="-90" x2="108" y2="-48"/>
+      </g>
+      <path d="M-46,150 a46,40 0 0 1 92,0" fill="none" stroke="#E6A44E"/>
+      <line x1="-58" y1="150" x2="58" y2="150" stroke="#E6A44E"/>
+    </g>
+    <text x="600" y="640" text-anchor="middle" font-family="Georgia, serif" font-size="74" fill="#1B1B1B" letter-spacing="6">BIG 3</text>
+  </svg>
+</template>
+
+<div id="root"></div>
+<script type="text/babel" src="app.standalone.jsx"></script>
+</body>
+</html>
